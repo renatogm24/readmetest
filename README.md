@@ -19,7 +19,7 @@
 <p align="center">
   <a href="#key-features">Key Features</a> •
   <a href="#how-to-use">How To Use</a> •
-  <a href="#download">Download</a> •
+  <a href="#development">Development</a> •
   <a href="#built-with">Built with</a> •
   <a href="#related">Related</a> •
   <a href="#license">License</a>
@@ -55,41 +55,79 @@
 
 ## How To Use
 
+In order to configure the environment variables, it is necessary to create a .env file
+
+```bash
+secret_key='secret key'
+db_user='user_db'
+db_password='password_db'
+AWS_ACCESS_KEY='AWS_KEY'
+AWS_ACCESS_SECRET='AWS_ACCESS_SECRET'
+GOOGLE_APPLICATION_CREDENTIALS='/path/to/file/config.json'
+YOUR_GMAIL='mail@domain.com'
+YOUR_PASSWORD='mail_password'
+```
+
+You need to create a schema in your database with this [model](https://github.com/renatogm24/emprendeadvisor/blob/master/emprendeadvisor.mwb)
+
 To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/amitmerchant1990/electron-markdownify
+$ git clone https://github.com/renatogm24/emprendeadvisor.git
 # Go into the repository
-$ cd electron-markdownify
-# Install dependencies
-$ npm install
+$ cd emprendeadvisor
+# Install virtual environment, must have python 3.9
+# For Windows
+$ pip install pipenv
+# For Linux
+$ apt install pipenv
+# Activate virtualenv
+$ pipenv shell
+# Install dependencies (with sudo on Linux)
+$ pipenv install -r requirement.txt
 # Run the app
-$ npm start
+$ python server.py
 ```
 
 Note: If you're using Linux Bash for Windows, [see this guide](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/) or use `node` from the command prompt.
 
 
-## Download
+## Development
 
-You can [download](https://github.com/amitmerchant1990/electron-markdownify/releases/tag/v1.2.0) the latest installable version of Markdownify for Windows, macOS and Linux.
+Want to contribute? Great!
 
-## Emailware
+To fix a bug or enhance an existing module, follow these steps:
 
-Markdownify is an [emailware](https://en.wiktionary.org/wiki/emailware). Meaning, if you liked using this app or it has helped you in any way, I'd like you send me an email at <bullredeyes@gmail.com> about anything you'd want to say about this software. I'd really appreciate it!
+- Fork the repo
+- Create a new branch (`git checkout -b improve-feature`)
+- Make the appropriate changes in the files
+- Add changes to reflect the changes made
+- Commit your changes (`git commit -am 'Improve feature'`)
+- Push to the branch (`git push origin improve-feature`)
+- Create a Pull Request 
+
+#### Bug / Feature Request
+
+If you find a bug (the website couldn't handle the query and / or gave undesired results), kindly open an issue [here](https://github.com/renatogm24/emprendeadvisor/issues/new) by including your search query and the expected result.
+
+If you'd like to request a new function, feel free to do so by opening an issue [here](https://github.com/renatogm24/emprendeadvisor/issues/new). Please include sample queries and their corresponding results.
 
 ## Built with
 
-This software uses the following open source packages:
+This web app uses the following libraries:
 
-- [Electron](http://electron.atom.io/)
-- [Node.js](https://nodejs.org/)
-- [Marked - a markdown parser](https://github.com/chjj/marked)
-- [showdown](http://showdownjs.github.io/showdown/)
-- [CodeMirror](http://codemirror.net/)
-- Emojis are taken from [here](https://github.com/arvida/emoji-cheat-sheet.com)
-- [highlight.js](https://highlightjs.org/)
+- [Python 3.9](https://www.python.org/downloads/release/python-390/)
+- [Flask](https://flask.palletsprojects.com/en/2.0.x/)
+- [Boto3 client](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html)
+- [Bootstrap](https://getbootstrap.com/)
+- [Flask-assets (SASS Compiler)](https://flask-assets.readthedocs.io/en/latest/)
+- [Flask-cors](https://flask-cors.readthedocs.io/en/latest/)
+- [Google translator API](https://cloud.google.com/translate/docs/setup)
+- [Redis client](https://github.com/redis/redis-py)
+- [Flask-bcrypt](https://flask-bcrypt.readthedocs.io/en/latest/)
+- [Flask-mail](https://pythonhosted.org/Flask-Mail/)
+- [Jinja2](https://jinja.palletsprojects.com/en/3.0.x/)
 
 ## Related
 
@@ -97,7 +135,7 @@ This software uses the following open source packages:
 
 ## Support
 
-<a href="https://www.buymeacoffee.com/5Zn8Xh3l9" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/purple_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+<a href="https://www.buymeacoffee.com/renatogaray" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/purple_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
 
 ## License
 
